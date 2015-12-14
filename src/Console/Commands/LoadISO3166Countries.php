@@ -36,6 +36,7 @@ class LoadISO3166Countries extends Command
      */
     public function handle()
     {
+        /** @var Keytype $keytype */
         $keytype = Keytype::create([
             'name'          => 'countries',
             'description'   => 'ISO 3166 Country Codes',
