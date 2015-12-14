@@ -4,27 +4,21 @@
  *
  * @author Del
  */
-namespace Incube8\Enums;
+namespace Delatbabel\Keylists;
 
 use Illuminate\Support\ServiceProvider;
 
 /**
- * Class EnumsServiceProvider
+ * Class KeylistsServiceProvider
  *
  * Service providers are the central place of all Laravel application bootstrapping.
  * Your own application, as well as all of Laravel's core services are bootstrapped
  * via service providers.
  *
- * <h4>Example</h4>
- *
- * <code>
- *   // Example code goes here
- * </code>
- *
  * @see  Illuminate\Support\ServiceProvider
  * @link http://laravel.com/docs/5.1/providers
  */
-class EnumsServiceProvider extends ServiceProvider
+class KeylistsServiceProvider extends ServiceProvider
 {
 
     /**
