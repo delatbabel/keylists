@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @see database/migrations/2012_01_01_000001_create_keylists_tables.php
  */
-class Keyvalue extends Model
+class Keytype extends Model
 {
     use SoftDeletes, Cacheable;
 
