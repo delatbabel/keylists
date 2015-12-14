@@ -51,7 +51,11 @@ class LoadISO3166Countries extends Command
         $bar = $this->output->createProgressBar($count);
 
         while ($data = fgetcsv($handle)) {
-            list($country_code, $country_name) = $data;
+            try {
+                list($country_code, $country_name) = $data;
+            } catch (\Exception $e) {
+                continue;
+            }
 
             // progress advance
             $bar->advance();
