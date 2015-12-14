@@ -77,5 +77,7 @@ class LoadISO3166Countries extends Command
 
         fclose($handle);
         $bar->finish();
+
+        echo "\n";
     }
 }
