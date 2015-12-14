@@ -5,7 +5,6 @@ namespace Delatbabel\Keylists\Console\Commands;
 use Illuminate\Console\Command;
 use Delatbabel\Keylists\Models\Keytype;
 use Delatbabel\Keylists\Models\Keyvalue;
-use Illuminate\Foundation\Inspiring;
 
 class LoadISO3166Countries extends Command
 {
