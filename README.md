@@ -50,7 +50,7 @@ To load some of the sample data, try adding this line to the $commands array in 
 file:
 
 ```
-    Delatbabel\Keylists\Console\Commands\LoadISO3166Countries
+    \Delatbabel\Keylists\Console\Commands\LoadISO3166Countries::class
 ```
 
 Then run this command:
