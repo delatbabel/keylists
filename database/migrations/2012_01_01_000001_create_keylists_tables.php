@@ -23,7 +23,7 @@ class CreateKeylistsTables extends Migration {
             $table->timestamps();
             $table->softDeletes();
 
-            $table->unique('keytype');
+            $table->unique('name');
         });
 
         Schema::create('keyvalues', function(Blueprint $table)
