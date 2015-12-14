@@ -1,0 +1,23 @@
+{
+    "name": "delatbabel/keylists",
+    "description": "Laravel key/value lists package.",
+    "keywords": ["laravel", "keylists", "key/value", "key", "value"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Del",
+            "email": "del@babel.com.au"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "delatbabel/fluents": "~1.0",
+        "laravel/framework": "5.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Delatbabel\\Keylists\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
