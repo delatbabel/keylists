@@ -27,7 +27,7 @@ class LoadISO3166Countries extends Command
      *
      * @var string
      */
-    protected $filename = __DIR__ . '../../../database/data/ISO3166Countries.csv';
+    protected $filename = __DIR__ . '/../../../database/data/ISO3166Countries.csv';
 
     /**
      * Execute the console command.

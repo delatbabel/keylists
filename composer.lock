@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c634906d549747371f0812e0db1ef573",
+    "hash": "41c1bb476002752eef875dd83773d67d",
     "content-hash": "b26a7b1e41eb126b612d6d929305c97f",
     "packages": [
         {
@@ -119,16 +119,16 @@
         },
         {
             "name": "delatbabel/fluents",
-            "version": "v1.2",
+            "version": "v1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/delatbabel/fluents.git",
-                "reference": "a2e334b4ad390258498057234f731ad86992ff55"
+                "reference": "cc6f74715e424045d44397cbfeaaa6b1673b06e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/delatbabel/fluents/zipball/a2e334b4ad390258498057234f731ad86992ff55",
-                "reference": "a2e334b4ad390258498057234f731ad86992ff55",
+                "url": "https://api.github.com/repos/delatbabel/fluents/zipball/cc6f74715e424045d44397cbfeaaa6b1673b06e5",
+                "reference": "cc6f74715e424045d44397cbfeaaa6b1673b06e5",
                 "shasum": ""
             },
             "require": {
@@ -160,7 +160,7 @@
                 "laravel",
                 "laravel5"
             ],
-            "time": "2015-12-06 07:24:05"
+            "time": "2015-12-14 12:43:01"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
