@@ -27,19 +27,24 @@ trait Cacheable
     use Fluents;
 
     /** @var string contains the cache key for caching values */
-    protected static $cache_key = 'override.this.key';
+    // protected static $cache_key = 'override.this.key';
 
     /**
-     * Return the cache index key for a model.
+     * Override this function to provide the cache key.
+     *
+     * Note that using a protected static variable inside a trait can't
+     * be done, it throws an error whenever it is overriden.
+     */
+    abstract protected function cacheKey();
+
+    /**
+     * Return the cache key for a model.
      *
      * Override this in child classes.
      *
      * @return string
      */
-    protected function getIndexKey()
-    {
-        return $this->id;
-    }
+    abstract protected function getIndexKey();
 
     /**
      * Return a simple list of entries in the table.
@@ -50,9 +55,12 @@ trait Cacheable
      */
     public static function tableToArray()
     {
+        $me = new static();
+        $cache_key = $me->cacheKey();
+
         // Return the array from the cache if it is present.
-        if (Cache::has(static::$cache_key)) {
-            return (array) Cache::get(static::$cache_key);
+        if (Cache::has($cache_key)) {
+            return (array) Cache::get($cache_key);
         }
 
         // Otherwise put the results into the cache and return them.
@@ -73,7 +81,7 @@ trait Cacheable
         foreach ($query as $row) {
             $results[$row->getIndexKey()] = $row->toFluent();
         }
-        Cache::put(static::$cache_key, $results, 60);
+        Cache::put($cache_key, $results, 60);
         return $results;
     }
 
@@ -84,6 +92,9 @@ trait Cacheable
      */
     public static function discardTableToArray()
     {
-        Cache::forget(static::$cache_key);
+        $me = new static();
+        $cache_key = $me->cacheKey();
+
+        Cache::forget($cache_key);
     }
 }

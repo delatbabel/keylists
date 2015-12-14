@@ -28,9 +28,26 @@ class Keytype extends Model
     protected $casts = [
         'extended_data'     => 'array',
     ];
-    
-    /** @var string contains the cache key for caching values */
-    protected static $cache_key = 'table.to.array.keytypes';
+
+    /**
+     * Return the cache key for a model.
+     *
+     * @return string
+     */
+    protected function cacheKey()
+    {
+        return 'table.to.array.keytypes';
+    }
+
+    /**
+     * Return the cache index key for a model.
+     *
+     * @return string
+     */
+    protected function getIndexKey()
+    {
+        return $this->name;
+    }
 
     /**
      * Many:1 relationship with Keytype
@@ -40,15 +57,6 @@ class Keytype extends Model
     public function keyvalues()
     {
         return $this->hasMany('Delatbabel\Keylists\Models\Keyvalue');
-    }
-    /**
-     * Return the cache index key for a model.
-     *
-     * @return string
-     */
-    protected function getIndexKey()
-    {
-        return $this->name;
     }
 
     /**
