@@ -2,8 +2,7 @@
 /**
  * Keyvalues Model
  *
- * @author VBC
- * @copyright 2015 Delatbabel.sg
+ * @author Del
  */
 
 namespace Delatbabel\Keylists\Models;
