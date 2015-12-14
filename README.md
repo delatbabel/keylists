@@ -44,9 +44,26 @@ php artisan vendor:publish --tag=migrations --force
 php artisan migrate
 ```
 
+## Sample Data
+
+To load some of the sample data, try adding this line to the $commands array in your app/Console/Kernel.php
+file:
+
+```
+    Delatbabel\Keylists\Console\Commands\LoadISO3166Countries
+```
+
+Then run this command:
+
+```
+    php artisan keylists:loadiso3166countries
+```
+
+This should create entries in the keylists / keyvalues table for the ISO 3166 country codes and names.
+
 ## Example
 
-I'll get to that. Quit bugging me, K? Just go write some code.
+I'll get to that. Quit bugging me, K? Just go read the code.
 
 ## Notes
 
