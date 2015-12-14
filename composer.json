@@ -1,7 +1,7 @@
 {
     "name": "delatbabel/keylists",
     "description": "Laravel key/value lists package.",
-    "keywords": ["laravel", "keylists", "key/value", "key", "value"],
+    "keywords": ["laravel", "keylists", "keyvalue", "key", "value"],
     "license": "MIT",
     "authors": [
         {
