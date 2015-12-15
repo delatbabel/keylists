@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Delatbabel\Keylists\Models\Keytype;
 use Delatbabel\Keylists\Models\Keyvalue;
 
-class LoadTimezones extends Command
+class LoadExchangeRates extends Command
 {
     /**
      * The name and signature of the console command.
