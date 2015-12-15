@@ -74,15 +74,15 @@ class LoadExchangeRates extends Command
         $bar = $this->output->createProgressBar($count);
 
         foreach ($ratedata as $code => $rate) {
-            $rate = Keyvalue::firstOrNew([
+            $keyval = Keyvalue::firstOrNew([
                 'keytype_id'    => $keytype->id,
                 'keyvalue'      => $code,
             ]);
-            $rate->keyname          = "USD to $code Exchange Rate";
-            $rate->extended_data    = [
+            $keyval->keyname          = "USD to $code Exchange Rate";
+            $keyval->extended_data    = [
                 'exchange_rate' => $rate,
             ];
-            $rate->save();
+            $keyval->save();
 
             // progress advance
             $bar->advance();
