@@ -6,28 +6,28 @@ use Illuminate\Console\Command;
 use Delatbabel\Keylists\Models\Keytype;
 use Delatbabel\Keylists\Models\Keyvalue;
 
-class LoadISO3166Countries extends Command
+class LoadAUStates extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'keylists:loadiso3166countries';
+    protected $signature = 'keylists:loadaustates';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Load ISO3166 Country Codes';
+    protected $description = 'Load Australian States';
 
     /**
      * Filename to load from
      *
      * @var string
      */
-    protected $filename = __DIR__ . '/../../../database/data/ISO3166Countries.csv';
+    protected $filename = __DIR__ . '/../../../database/data/AUSstates.csv';
 
     /**
      * Execute the console command.
@@ -38,8 +38,8 @@ class LoadISO3166Countries extends Command
     {
         /** @var Keytype $keytype */
         $keytype = Keytype::create([
-            'name'          => 'countries',
-            'description'   => 'ISO 3166 Country Codes',
+            'name'          => 'states.au',
+            'description'   => 'Australian States',
             'created_by'    => 'loader',
             'updated_by'    => 'loader',
         ]);
@@ -47,12 +47,12 @@ class LoadISO3166Countries extends Command
         $handle = fopen($this->filename, 'r');
 
         // Get this in advance by calling wc -l $file
-        $count = 246;
+        $count = 8;
         $bar = $this->output->createProgressBar($count);
 
         while ($data = fgetcsv($handle)) {
             try {
-                list($country_code, $country_name) = $data;
+                list($country, $state_code, $state_name) = $data;
             } catch (\Exception $e) {
                 continue;
             }
@@ -60,16 +60,11 @@ class LoadISO3166Countries extends Command
             // progress advance
             $bar->advance();
 
-            // Skip the first line
-            if ($country_code == "country_code") {
-                continue;
-            }
-
             // Create the entry
             Keyvalue::create([
                 'keytype_id'    => $keytype->id,
-                'keyvalue'      => $country_code,
-                'keyname'       => $country_name,
+                'keyvalue'      => $state_code,
+                'keyname'       => $state_name,
                 'created_by'    => 'loader',
                 'updated_by'    => 'loader',
             ]);
