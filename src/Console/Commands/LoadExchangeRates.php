@@ -56,7 +56,7 @@ class LoadExchangeRates extends Command
         
         // To pull the data from the one off JSON file, then just use these
         // lines.
-        $json_data = file($this->filename);
+        $json_data = file_get_contents($this->filename);
         $response_data = json_decode($json_data);
         
         /** @var Keytype $keytype */
