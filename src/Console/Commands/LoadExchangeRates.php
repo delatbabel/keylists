@@ -1,11 +1,24 @@
 <?php
-
+/**
+ * Load Exchange Rates
+ */
 namespace Delatbabel\Keylists\Console\Commands;
 
 use Illuminate\Console\Command;
 use Delatbabel\Keylists\Models\Keytype;
 use Delatbabel\Keylists\Models\Keyvalue;
 
+/**
+ * Class LoadExchangeRates
+ *
+ * This is an example of a script that can load data into the keytypes/keyvalues
+ * tables from an external API. In this case the API used is openexchangerates.org
+ * which provides a list of currencies and USD exchange rates.
+ *
+ * To use this script properly you will need to provide a proper app_id, which can
+ * be obtained from the openexchangerates.org web site.  They provide a number of
+ * packages where updated exchange rate data can be obtained at a reasonable cost.
+ */
 class LoadExchangeRates extends Command
 {
     /**

@@ -1,11 +1,20 @@
 <?php
-
+/**
+ * LoadAUStates
+ */
 namespace Delatbabel\Keylists\Console\Commands;
 
 use Illuminate\Console\Command;
 use Delatbabel\Keylists\Models\Keytype;
 use Delatbabel\Keylists\Models\Keyvalue;
 
+/*
+ * LoadAUStates
+ *
+ * This is an example of a script to load data into the keytypes/keyvalues
+ * tables from a CSV file.  The CSV file used in this case contains a list
+ * of Australian states and territories.
+ */
 class LoadAUStates extends Command
 {
     /**

@@ -1,11 +1,21 @@
 <?php
-
+/**
+ * LoadTimezones
+ */
 namespace Delatbabel\Keylists\Console\Commands;
 
 use Illuminate\Console\Command;
 use Delatbabel\Keylists\Models\Keytype;
 use Delatbabel\Keylists\Models\Keyvalue;
 
+/**
+ * Class LoadTimezones
+ *
+ * This is an example of a script to load data into the keytypes/keyvalues
+ * tables from a PHP function. In this ase the function used is
+ * timezone_identifiers_list() which contains the list of timezones
+ * supported by PHP.
+ */
 class LoadTimezones extends Command
 {
     /**

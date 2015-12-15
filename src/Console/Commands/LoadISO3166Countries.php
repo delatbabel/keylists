@@ -1,11 +1,20 @@
 <?php
-
+/**
+ * LoadISO3166Countries
+ */
 namespace Delatbabel\Keylists\Console\Commands;
 
 use Illuminate\Console\Command;
 use Delatbabel\Keylists\Models\Keytype;
 use Delatbabel\Keylists\Models\Keyvalue;
 
+/**
+ * Class LoadISO3166Countries
+ *
+ * This is an example of a script to load data into the keytypes/keyvalues table
+ * from a CSV file. The file in this case contains ISO 3166 country codes and country
+ * names.
+ */
 class LoadISO3166Countries extends Command
 {
     /**
