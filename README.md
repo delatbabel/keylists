@@ -27,6 +27,12 @@ Once that is done, run the composer update command:
     composer update
 ```
 
+Alternatively just run this:
+
+```
+    composer require delatbabel/keylists
+```
+
 ### Register Service Provider
 
 After composer update completes, add this line to your config/app.php file in the 'providers' array:

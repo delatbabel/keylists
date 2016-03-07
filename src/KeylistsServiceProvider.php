@@ -20,9 +20,19 @@ use Illuminate\Support\ServiceProvider;
  */
 class KeylistsServiceProvider extends ServiceProvider
 {
+    /** @var array list of commands to be registered in the service provider */
+    protected $moreCommands = [
+        \Delatbabel\Keylists\Console\Commands\LoadISO3166Countries::class,
+        \Delatbabel\Keylists\Console\Commands\LoadTimezones::class,
+        \Delatbabel\Keylists\Console\Commands\LoadExchangeRates::class,
+    ];
 
     /**
      * Bootstrap the application events.
+     *
+     * This method is called after all other service providers have been registered,
+     * meaning you have access to all other services that have been registered by
+     * the framework.
      *
      * @return void
      */
@@ -31,15 +41,22 @@ class KeylistsServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../database/migrations' => $this->app->databasePath() . '/migrations'
         ], 'migrations');
+
+        $this->commands($this->moreCommands);
     }
 
     /**
      * Register the service provider.
      *
+     * Within the register method, you should only bind things into the service container.
+     * You should never attempt to register any event listeners, routes, or any other piece
+     * of functionality within the register method. Otherwise, you may accidentally use a
+     * service that is provided by a service provider which has not loaded yet.
+     *
      * @return void
      */
     public function register()
     {
-        // $this->mergeConfigFrom(__DIR__ . '/config/config.php', 'slack');
+        //
     }
 }
