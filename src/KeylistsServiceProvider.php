@@ -6,6 +6,9 @@
  */
 namespace Delatbabel\Keylists;
 
+use Delatbabel\Keylists\Console\Commands\LoadExchangeRates;
+use Delatbabel\Keylists\Console\Commands\LoadISO3166Countries;
+use Delatbabel\Keylists\Console\Commands\LoadTimezones;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -22,9 +25,9 @@ class KeylistsServiceProvider extends ServiceProvider
 {
     /** @var array list of commands to be registered in the service provider */
     protected $moreCommands = [
-        \Delatbabel\Keylists\Console\Commands\LoadISO3166Countries::class,
-        \Delatbabel\Keylists\Console\Commands\LoadTimezones::class,
-        \Delatbabel\Keylists\Console\Commands\LoadExchangeRates::class,
+        LoadISO3166Countries::class,
+        LoadTimezones::class,
+        LoadExchangeRates::class,
     ];
 
     /**
@@ -39,7 +42,7 @@ class KeylistsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../database/migrations' => $this->app->databasePath() . '/migrations'
+            __DIR__ . '/../database/migrations' => database_path() . '/migrations'
         ], 'migrations');
         $this->publishes([
             __DIR__ . '/../config' => config_path()
