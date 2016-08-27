@@ -7,8 +7,8 @@
 
 namespace Delatbabel\Keylists\Models;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Keyvalues Model
@@ -76,14 +76,14 @@ class Keyvalue extends Model
     {
         if (empty($keyType)) {
             // return empty array
-            return array();
+            return [];
         }
 
         $tableCache = static::tableToArray();
 
         // Read through the entire table cache looking for keys that match
         // the keyType
-        $result = array();
+        $result = [];
         foreach ($tableCache as $key => $value) {
             list($storedType, $storedValue) = explode('__', $key, 2);
             if ($storedType == $keyType) {
@@ -106,7 +106,7 @@ class Keyvalue extends Model
 
         // Sort through the enums of the found type and reformat those
         // as a keyvalue => keyname list.
-        $list = array();
+        $list = [];
 
         /** @var Keyvalue $keyvalue */
         foreach ($keyvalues as $keyvalue) {

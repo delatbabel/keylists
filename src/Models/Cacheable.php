@@ -7,8 +7,8 @@
 
 namespace Delatbabel\Keylists\Models;
 
-use Illuminate\Support\Facades\Cache;
 use Delatbabel\Fluents\Fluents;
+use Illuminate\Support\Facades\Cache;
 
 /**
  * Cacheable Trait
@@ -55,7 +55,7 @@ trait Cacheable
      */
     public static function tableToArray()
     {
-        $me = new static();
+        $me        = new static();
         $cache_key = $me->cacheKey();
 
         // Return the array from the cache if it is present.
@@ -64,7 +64,7 @@ trait Cacheable
         }
 
         // Otherwise put the results into the cache and return them.
-        $results = array();
+        $results = [];
 
         $query = static::all();
 
@@ -92,7 +92,7 @@ trait Cacheable
      */
     public static function discardTableToArray()
     {
-        $me = new static();
+        $me        = new static();
         $cache_key = $me->cacheKey();
 
         Cache::forget($cache_key);

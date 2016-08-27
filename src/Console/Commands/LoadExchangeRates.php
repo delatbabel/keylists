@@ -4,9 +4,9 @@
  */
 namespace Delatbabel\Keylists\Console\Commands;
 
-use Illuminate\Console\Command;
 use Delatbabel\Keylists\Models\Keytype;
 use Delatbabel\Keylists\Models\Keyvalue;
+use Illuminate\Console\Command;
 
 /**
  * Class LoadExchangeRates
@@ -66,12 +66,12 @@ class LoadExchangeRates extends Command
             throw new \Exception('Empty response from api.');
         }
         */
-        
+
         // To pull the data from the one off JSON file, then just use these
         // lines.
-        $json_data = file_get_contents($this->filename);
+        $json_data     = file_get_contents($this->filename);
         $response_data = json_decode($json_data, true);
-        
+
         /** @var Keytype $keytype */
         $keytype = Keytype::create([
             'name'          => 'usd_rates',
@@ -80,11 +80,11 @@ class LoadExchangeRates extends Command
             'updated_by'    => 'loader',
         ]);
 
-        
+
         // Get this in advance
         $ratedata = $response_data['rates'];
-        $count = count($ratedata);
-        $bar = $this->output->createProgressBar($count);
+        $count    = count($ratedata);
+        $bar      = $this->output->createProgressBar($count);
 
         foreach ($ratedata as $code => $rate) {
             $keyval = Keyvalue::firstOrNew([

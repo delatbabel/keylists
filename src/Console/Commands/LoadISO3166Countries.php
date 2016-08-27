@@ -4,9 +4,9 @@
  */
 namespace Delatbabel\Keylists\Console\Commands;
 
-use Illuminate\Console\Command;
 use Delatbabel\Keylists\Models\Keytype;
 use Delatbabel\Keylists\Models\Keyvalue;
+use Illuminate\Console\Command;
 
 /**
  * Class LoadISO3166Countries
@@ -57,7 +57,7 @@ class LoadISO3166Countries extends Command
 
         // Get this in advance by calling wc -l $file
         $count = 246;
-        $bar = $this->output->createProgressBar($count);
+        $bar   = $this->output->createProgressBar($count);
 
         while ($data = fgetcsv($handle)) {
             try {
