@@ -4,9 +4,9 @@
  */
 namespace Delatbabel\Keylists\Console\Commands;
 
-use Illuminate\Console\Command;
 use Delatbabel\Keylists\Models\Keytype;
 use Delatbabel\Keylists\Models\Keyvalue;
+use Illuminate\Console\Command;
 
 /**
  * Class LoadTimezones
@@ -49,7 +49,7 @@ class LoadTimezones extends Command
 
         // Get this in advance
         $count = 417;
-        $bar = $this->output->createProgressBar($count);
+        $bar   = $this->output->createProgressBar($count);
 
         $timezone_list = timezone_identifiers_list();
 

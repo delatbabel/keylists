@@ -7,8 +7,8 @@
 
 namespace Delatbabel\Keylists\Models;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Keytype Model
@@ -69,7 +69,7 @@ class Keytype extends Model
         $tableCache = static::tableToArray();
 
         // Reformat the table cache to name => description.
-        $result = array();
+        $result = [];
         foreach ($tableCache as $key => $value) {
             $result[$value->name] = $value->description;
         }

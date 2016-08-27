@@ -6,7 +6,7 @@
  * @link https://github.com/ddpro/admin/blob/master/docs/model-configuration.md
  */
 
-return array(
+return [
 
     'title' => 'Keyvalues',
 
@@ -17,54 +17,54 @@ return array(
     /**
      * The display columns
      */
-    'columns' => array(
+    'columns' => [
         'id',
-        'keyvalue' => array(
+        'keyvalue' => [
             'title' => 'Value',
-        ),
-        'keyname' => array(
+        ],
+        'keyname' => [
             'title' => 'Name',
-        ),
-        'description' => array(
+        ],
+        'description' => [
             'title' => 'Description',
-        ),
-    ),
+        ],
+    ],
 
     /**
      * The filter set
      */
-    'filters' => array(
-        'name' => array(
+    'filters' => [
+        'name' => [
             'title' => 'Name',
-        ),
-    ),
+        ],
+    ],
 
     /**
      * The editable fields
      */
-    'edit_fields' => array(
-        'keytype' => array(
-            'title' => 'Key Type',
-            'type' => 'relationship',
+    'edit_fields' => [
+        'keytype' => [
+            'title'      => 'Key Type',
+            'type'       => 'relationship',
             'name_field' => 'name',
-        ),
-        'keyvalue' => array(
+        ],
+        'keyvalue' => [
             'title' => 'Value',
-            'type' => 'text',
-        ),
-        'keyname' => array(
+            'type'  => 'text',
+        ],
+        'keyname' => [
             'title' => 'Name',
-            'type' => 'text',
-        ),
-        'description' => array(
+            'type'  => 'text',
+        ],
+        'description' => [
             'title' => 'Description',
-            'type' => 'text',
-        ),
-        'extended_data' => array(
+            'type'  => 'text',
+        ],
+        'extended_data' => [
             'title' => 'Extended Data',
-            'type' => 'textarea',
-        ),
-    ),
+            'type'  => 'textarea',
+        ],
+    ],
 
     'form_width' => 700,
-);
+];

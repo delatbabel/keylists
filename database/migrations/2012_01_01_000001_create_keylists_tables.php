@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
-class CreateKeylistsTables extends Migration {
+class CreateKeylistsTables extends Migration
+{
 
     /**
      * Run the migrations.
@@ -12,8 +13,7 @@ class CreateKeylistsTables extends Migration {
      */
     public function up()
     {
-        Schema::create('keytypes', function(Blueprint $table)
-        {
+        Schema::create('keytypes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 50);
             $table->longText('description')->nullable();
@@ -26,8 +26,7 @@ class CreateKeylistsTables extends Migration {
             $table->unique('name');
         });
 
-        Schema::create('keyvalues', function(Blueprint $table)
-        {
+        Schema::create('keyvalues', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('keytype_id')->unsigned();
             $table->string('keyvalue', 255);
