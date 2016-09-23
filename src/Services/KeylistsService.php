@@ -10,7 +10,6 @@ namespace Delatbabel\Keylists\Services;
 use Delatbabel\Keylists\Models\Keyvalue;
 use Illuminate\Support\Fluent;
 
-
 /**
  * Class KeylistsService
  *
