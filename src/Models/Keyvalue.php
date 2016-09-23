@@ -53,7 +53,7 @@ class Keyvalue extends Model
      */
     protected function getIndexKey()
     {
-        return $this->keytype()->name . '__' . $this->keyvalue;
+        return $this->keytype->name . '__' . $this->keyvalue;
     }
 
     /**
@@ -69,8 +69,13 @@ class Keyvalue extends Model
     /**
      * return the Keyvalues objects for a given keytype
      *
+     * Result array is formatted like this:
+     *
+     * * keyvalue => fluent object(keyvalue, keyname, ...),
+     * * ... etc
+     *
      * @param string $keyType
-     * @return array
+     * @return array of Fluent
      */
     public static function getKeyvaluesByKeyType($keyType)
     {
@@ -87,7 +92,7 @@ class Keyvalue extends Model
         foreach ($tableCache as $key => $value) {
             list($storedType, $storedValue) = explode('__', $key, 2);
             if ($storedType == $keyType) {
-                $result[$value->id] = $value;
+                $result[$value->keyvalue] = $value;
             }
         }
 
@@ -97,8 +102,13 @@ class Keyvalue extends Model
     /**
      * return the keyvalue -> keyname pairs for all elements that match a keytype
      *
+     * Result array is formatted like this:
+     *
+     * * keyvalue => keyname
+     * * ... etc
+     *
      * @param string $keyType
-     * @return array
+     * @return array of string
      */
     public static function getKeyValuesByType($keyType)
     {

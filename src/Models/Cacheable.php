@@ -51,7 +51,7 @@ trait Cacheable
      *
      * May cache the results for up to 60 minutes.
      *
-     * @return	array
+     * @return	array of Fluent objects
      */
     public static function tableToArray()
     {
