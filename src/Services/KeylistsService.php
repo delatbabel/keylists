@@ -36,6 +36,9 @@ class KeylistsService
     public function getKeyValue($keyType, $keyValue)
     {
         $list = Keyvalue::getKeyvaluesByKeyType($keyType);
-        return $list[$keyValue];
+        if (isset($list[$keyValue])) {
+            return $list[$keyValue];
+        }
+        return null;
     }
 }
