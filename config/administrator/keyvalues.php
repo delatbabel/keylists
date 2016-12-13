@@ -17,21 +17,17 @@ return [
      */
     'columns' => [
         'id',
-        'keytype' => [
-
-            'title'         => 'Key Type',
-            'type'          => 'relationship',
-            'relationship'  => 'keytype',
-            'select'        => "(:table).name",
-        ],
         'keyvalue' => [
             'title' => 'Value',
         ],
         'keyname' => [
             'title' => 'Name',
         ],
-        'description' => [
-            'title' => 'Description',
+        'keytype' => [
+            'title'         => 'Key Type',
+            'type'          => 'relationship',
+            'relationship'  => 'keytype',
+            'select'        => "(:table).name",
         ],
     ],
 
