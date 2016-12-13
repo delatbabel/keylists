@@ -18,9 +18,11 @@ return [
     'columns' => [
         'id',
         'keytype' => [
-            'title'      => 'Key Type',
-            'type'       => 'relationship',
-            'name_field' => 'name',
+
+            'title'         => 'Key Type',
+            'type'          => 'relationship',
+            'relationship'  => 'keytype',
+            'select'        => "(:table).name",
         ],
         'keyvalue' => [
             'title' => 'Value',
