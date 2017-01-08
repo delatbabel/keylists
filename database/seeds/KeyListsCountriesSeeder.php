@@ -18,8 +18,10 @@ class KeyListsCountriesSeeder extends Seeder
         //
         /** @var Keytype $keytype */
         $keytype = Keytype::create([
-            'name'          => 'countries',
-            'description'   => 'Countries',
+            'name'          => 'country_dialling',
+            'description'   => 'Country Dialling Codes',
+            'created_by'    => 'loader',
+            'updated_by'    => 'loader',
         ]);
 
         // Read all of the country data from the supplied data file.
