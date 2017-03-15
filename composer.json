@@ -13,7 +13,7 @@
         "php": ">=5.4.0",
         "delatbabel/fluents": "~1.0",
         "guzzlehttp/guzzle": "6.*",
-        "laravel/framework": "<5.4"
+        "laravel/framework": "^5.1"
     },
     "autoload": {
         "psr-4": {
