@@ -9,6 +9,7 @@ namespace Delatbabel\Keylists;
 use Delatbabel\Keylists\Console\Commands\LoadExchangeRates;
 use Delatbabel\Keylists\Console\Commands\LoadISO3166Countries;
 use Delatbabel\Keylists\Console\Commands\LoadTimezones;
+use Delatbabel\Keylists\Console\Commands\LoadAUStates;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -28,6 +29,7 @@ class KeylistsServiceProvider extends ServiceProvider
         LoadISO3166Countries::class,
         LoadTimezones::class,
         LoadExchangeRates::class,
+        LoadAUStates::class,
     ];
 
     /**
